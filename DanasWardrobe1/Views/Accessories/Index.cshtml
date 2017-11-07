@@ -1,0 +1,24 @@
+﻿@model IEnumerable<DanasWardrobe1.Models.Accessory>
+
+<div class="row">
+    <div class="container">
+        <h2>Dana's Accessory Wardrobe</h2>
+        <p>
+            @Html.ActionLink("ADD ACCESSORY", "Create", new { id = ViewBag.TopsID }, new { @class = "btn btn-default", role = "button" })
+        </p>
+    </div>
+</div>
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <a>
+                    <img src="@Html.DisplayFor(modelItem => item.Photo)" />
+                    <h3>@Html.DisplayFor(modelItem => item.Name)</h3>
+                    <p>@Html.ActionLink("DETAILS", "Details", new { id = item.AccessoriesID }, new { @class = "btn btn-default", role = "button" })</p>
+                </a>
+            </div>
+        </div>
+    }
+</div>
